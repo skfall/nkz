@@ -1,0 +1,1 @@
+<section class="sect_404">	<div class="container">		<center>			<h3 class="tac">404</h3>			<h4 class="tac">Страница не найдена</h4>		</center>	</div></section>

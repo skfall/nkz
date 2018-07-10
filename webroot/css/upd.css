@@ -1,0 +1,115 @@
+.slide_btns {text-align: center;}
+.slide_btns a {display: inline-block; font: 16px 'RobotoCB', Tahoma; color: #fff; letter-spacing: 1px; padding: 15px 30px; text-decoration: none; border-radius: 3px; opacity: 1; transition-duration: 0.3s;}
+.slide_btns a:hover {opacity: 0.9;}
+.slide_btns .btn_1 {background: #76a94c; margin-right: 20px;}
+.slide_btns .btn_2 {background: #d61920;}
+
+.home_objects {background: #2a2a2a url('../img/bg_prog_bg.jpg') center no-repeat; background-size: cover; -webkit-background-size: cover; -moz-background-size: cover; -ms-background-size: cover; -o-background-size: cover; padding: 120px 0;}
+.home_objects .caption {font: 42px 'RobotoB', tahoma; color: #fff; text-transform: uppercase; margin-bottom: 21px; line-height: 45px;}
+.home_objects a {text-decoration: none; transition-duration: 0.3s;}
+.home_objects .object_name {font: 25px 'RobotoB', Tahoma; color: #fff; padding-top: 28px; padding-left: 45px; display: block; position: relative; padding-bottom: 17px; transition-duration: 0.3s;}
+.home_objects .object_name::after {content: ""; display: block; position: absolute; left: 0; bottom: 0; height: 5px; width: 35%; background: #d51721; transition-duration: 0.3s;}
+.home_objects a img {width: 100%; height: 360px;}
+.home_objects a:hover {opacity: 0.8;}
+.home_objects a:hover .object_name {padding-left: 30px;}
+.home_objects a:hover .object_name::after {left: 30px;}
+
+.new_opportunities {text-align: center; position: relative; z-index: 40; padding-top: 100px;}
+.new_opportunities .caption {font: 35px 'RobotoB', Tahoma; color: #494844; text-transform: uppercase; margin-bottom: 25px; text-align: center;}
+.new_opportunities a {background: #d61920; font: 18px 'RobotoCB', Tahoma; color: #fff; padding: 12px 35px; letter-spacing: 1px; transition-duration: 0.3s; opacity: 1; text-decoration: none;}
+.new_opportunities a:hover {opacity: 0.8;}
+
+header .appointment_btn.upd {background: #d61920; transition-duration: 0.3s; opacity: 1;}
+header .appointment_btn.upd .text {color: #fff; font-family: 'RobotoCB', 'Roboto'; letter-spacing: 1px;}
+header .appointment_btn.upd .bg_l, header .appointment_btn.upd .bg_r {display: none;}
+header .appointment_btn.upd:hover {opacity: 0.8;}
+
+.nrc_wrap {background: #fff; padding: 40px 15px; position: relative;}
+.nrc_wrap .caption {font: 24px 'RobotoCB',Tahoma; color: #000; margin-bottom: 25px;}
+.nrc_wrap input[name="phone"] {width: 100%; display: block; border: 1px solid #07518e; border-radius: 4px; background: #fff; padding: 10px 15px; font: 16px 'RobotoR',Tahoma; color: #333; float: left; max-width: 280px; margin-right: 15px;}
+
+.nrc_wrap .submit {border-radius: 4px; background: #629935; cursor: pointer; text-align: center; font: 19px 'RobotoCB', Tahoma; color: #fff; border: 0; padding: 9px 30px; transition-duration: .3s;}
+.nrc_wrap p.response {margin-top: 10px;}
+
+@media(max-width: 768px){
+    .nrc_wrap input[name="phone"] {max-width: 100%; margin-right: 0; margin-bottom: 15px;}
+    .nrc_wrap .submit {display: block; margin: 0 auto;}
+    .nrc_wrap p.response {text-align: center;}
+}
+
+
+@media(min-width: 994px){
+    .upd_houses_list .right {float: right;}
+}
+
+.upd_caption {color: #ca3e30; font: 36px 'RobotoCB', Tahoma; margin-bottom: 25px;}
+.upd_location {display: inline-block; border: 1px solid #e8e8e8; font: 15px 'Roboto',Tahoma; color: #2f518e; position: relative; background: url("../img/map-o.png") 12px center no-repeat; padding: 10px 20px 10px 35px; border-radius: 3px; text-decoration: underline; top: -4px; cursor: pointer; margin-bottom: 58px;}
+.upd_house_item {margin-bottom: 80px;}
+
+.upd_house_owl_primary {margin-bottom: 20px;}
+.upd_house_owl_primary .item {padding: 0 15px;}
+.upd_house_owl_primary .item img {width: 100%; height: auto;}
+.upd_house_owl_secondary .item {padding: 10px 15px;}
+
+.upd_house_name {font: 36px 'RobotoB', Tahoma; color: #333333; margin-bottom: 10px; display: block;}
+.upd_house_name:hover {color: #333;}
+.upd_house_name:link {color: #333;}
+.upd_house_name:visited {color: #333;}
+.upd_house_name:active {color: #333;}
+.upd_underline {height: 5px; width: 110px; background: #fbf3dc; margin-bottom: 15px;}
+
+.upd_houses_list .upd_unit {margin-bottom: 15px;}
+.upd_houses_list .upd_unit p {font: 15px 'RobotoR', Tahoma; color: #333333; margin-bottom: 0px;}
+.upd_houses_list .upd_unit p .value {font: 22px 'RobotoB', Tahoma; color: #333333;}
+
+.upd_properties li {font: 15px 'Roboto', Tahoma; color: #333; background: url("../img/check_icon.png") left center no-repeat; padding-left: 20px; margin-bottom: 8px; font: 15px 'RobotoR', Tahoma; color: #333333;}
+.upd_s_text {font: 15px 'RobotoR', Tahoma; color: #333333; margin-bottom: 0px;}
+
+.upd_unit.rooms_count {background: #fbf3dc; padding: 15px 10px; text-align: center; margin-top: 15px;}
+.upd_unit.rooms_count .upd_rooms_count_title {margin-bottom: 12px;}
+
+.upd_house_owl_secondary .item img {max-width: 100%; max-height: 92px; height: 100vh; width: 100%; margin: 0 auto;}
+
+.upd_consult_btn {display: block; font: 19px 'RobotoCB', Tahoma; color: #fff; letter-spacing: 0px; padding: 15px 30px; text-decoration: none; border-radius: 3px; opacity: 1; transition-duration: 0.3s; background: #76a94c; text-align: center; margin-top: 15px; text-decoration: none !important;}
+.upd_consult_btn:hover {opacity: 0.8; color: #fff;}
+.upd_consult_btn:visited {color: #fff;}
+.upd_consult_btn:link {color: #fff;}
+.upd_consult_btn:active {color: #fff;}
+
+.upd_flat_caption {font: 36px 'RobotoCB', Tahoma; color: #333333; margin-bottom: 0;}
+.upd_sub_caption {font: 24px 'RobotoCB', Tahoma; color: #333;}
+.upd_caption_box {padding-bottom: 10px;}
+
+.upd.order_btn {font: 19px "RobotoCB", Tahoma; color: #fff; border-radius: 3px; padding: 13px 28px; text-decoration: none; text-align: center; transition-duration: .3s; display: block; margin-bottom: 15px;}
+.upd_consult_text {font: 16px 'RobotoR', Tahoma; color: #333333; padding-left: 25px; background: url('../img/green_phone.png') left center no-repeat; margin-bottom: 3px;}
+.upd_consult_phone {font: 16px 'RobotoB', Tahoma; color: #75a94a; padding-left: 25px; margin-bottom: 15px;}
+.upd_consult_phone:link {color: #75a94a;}
+.upd_consult_phone:hover {color: #75a94a;}
+.upd_consult_phone:active {color: #75a94a;}
+.upd_consult_phone:visited {color: #75a94a;}
+
+.upd_flat_underline {width: 100%; height: 3px; background: #ececec; margin: 13px 0;}
+
+.upd_top_flat_box .left {float: left; width: 50%; padding: 0 5px;}
+.upd_top_flat_box .left p {font: 15px 'RobotoR', Tahoma; color: #333333; margin-bottom: 0;}
+.upd_top_flat_box .left p .value {font: 30px 'RobotoB', Tahoma; color: #333333;}
+.upd_top_flat_box .right {float: left; width: 50%; padding: 0 5px;}
+.upd_top_flat_box .right p {font: 15px 'RobotoR', Tahoma; color: #333333; margin-bottom: 0;}
+.upd_top_flat_box .right p .value {font: 30px 'RobotoB', Tahoma; color: #333333;}
+
+@media(max-width: 1200px){
+    .upd_top_flat_box .left p .value {font: 23px 'RobotoB', Tahoma; color: #333333;}
+    .upd_top_flat_box .right p .value {font: 23px 'RobotoB', Tahoma; color: #333333;}
+}
+
+@media(max-width: 993px){
+    .upd_location {margin-bottom: 20px;}
+    .upd_consult_btn {margin-bottom: 20px; width: 90%; margin: 15px auto 20px;}
+    .upd_house_item {margin-bottom: 40px;}
+}
+
+@media(max-width: 550px){
+    .upd_house_owl_secondary .item {padding: 0px 10px;}
+    .upd_house_owl_primary .item {padding: 0 10px;}
+    .upd_house_owl_secondary .item img {max-height: 50px;}
+}

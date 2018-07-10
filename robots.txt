@@ -1,0 +1,21 @@
+User-Agent: *
+Disallow: /cgi-bin
+Disallow: /split
+Disallow: /myprotected
+Disallow: /icake
+
+User-agent: Yahoo
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Mediapartners-Google
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+Sitemap: https://n-k-z.com/sitemap.xml
+
+Host: https://n-k-z.com
