@@ -7,17 +7,21 @@
 	
 	// Start body content
 	
-	$cardItem = $zh->getThBannerItem($item_id);
+	$cardItem = $zh->getUpdCtLayout($item_id);
+
 
 	$rootPath = ROOT_PATH;
 	
 	$cardTmp = array(
 					 'ID'						=>	array( 'type'=>'text', 		'field'=>'id', 				'params'=>array() ),
 					 'Заголовок'					=>	array( 'type'=>'text', 		'field'=>'caption', 		'params'=>array() ),
-					 'Подзаголовок 1'					=>	array( 'type'=>'text', 		'field'=>'sub_1', 		'params'=>array() ),
-					 'Подзаголовок 2'					=>	array( 'type'=>'text', 		'field'=>'sub_2', 		'params'=>array() ),
+					 'Описание'					=>	array( 'type'=>'text', 		'field'=>'cottage_desc', 		'params'=>array() ),
+					 'В стоимость входит'					=>	array( 'type'=>'text', 		'field'=>'features', 		'params'=>array() ),
+					 'Свойства'					=>	array( 'type'=>'text', 		'field'=>'properties', 		'params'=>array() ),
+					 'Цена'					=>	array( 'type'=>'text', 		'field'=>'price', 		'params'=>array() ),
+					 'Площадь'					=>	array( 'type'=>'text', 		'field'=>'area', 		'params'=>array() ),
 					 'Порядковый номер'			=>	array( 'type'=>'text', 		'field'=>'pos', 		'params'=>array() ),
-					 'Изображение'		=>	array( 'type'=>'image',		'field'=>'image',			'params'=>array( 'path'=>RSF.'/split/files/new_th/' ) ),
+					 'Изображения'			=>	array( 'type'=>'images',	'field'=>'layouts',			'params'=>array( 'path'=>RSF.'/split/files/cottages/', 'field'=>'filename' ) ),
 					 'Публикация'				=>	array( 'type'=>'text', 		'field'=>'block', 			'params'=>array( 'replace'=>array('0'=>'Да', '1'=>'Нет') ) ),
 					 'Дата создания'			=>	array( 'type'=>'date', 		'field'=>'created', 		'params'=>array() ),
 					 'Дата редактирования'		=>	array( 'type'=>'date', 		'field'=>'modified', 		'params'=>array() )
@@ -31,7 +35,7 @@
 	
 	$data['bodyContent'] .= "
 		<div class='ipad-20' id='order_conteinter'>
-			<h3>Детальный просмотр BANNER Townhouses #$item_id</h3>";
+			<h3>Детальный просмотр коттеджа #$item_id</h3>";
 	
 	$data['bodyContent'] .= $cardViewTableStr;
 				

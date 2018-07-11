@@ -57,7 +57,7 @@
 					 'Панорама'			=>	array( 'type'=>'frame',	'field'=>'panorama',			'params'=>array( 'field'=>'source' ) ),
 					 
 					 'Слайды'			=>	array( 'type'=>'images',	'field'=>'images',			'params'=>array( 'path'=>RSF.'/split/files/house_slides/', 'field'=>'source' ) ),
-					 'Гарелея'			=>	array( 'type'=>'images',	'field'=>'gal',			'params'=>array( 'path'=>RSF.'/split/files/house_gal/', 'field'=>'source' ) ),
+					 'Галерея'			=>	array( 'type'=>'images',	'field'=>'gal',			'params'=>array( 'path'=>RSF.'/split/files/house_gal/', 'field'=>'source' ) ),
 					 
 					 );
 

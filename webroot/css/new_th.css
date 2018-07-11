@@ -655,7 +655,7 @@ footer .questions a {text-decoration: underline;}
 .layout_item .features p a.active {border-bottom: 1px dashed transparent; color: #333333; text-decoration: none; font-family: 'RobotoB', Tahoma;}
 .layout_item .features p a {border-bottom: 1px dashed #2f518e; color: #2f518e; text-decoration: none; font-family: 'Roboto', Tahoma; margin-right: 20px;}
 .layout_item .features ul {margin-bottom: 30px;}
-.layout_item .features li {font: 16px 'Roboto', Tahoma; color: #333333; padding-left: 20px; background: url('../img/check_icon.png') left center no-repeat; margin-bottom: 5px;}
+.layout_item .features li {font: 16px 'RobotoL', Tahoma; color: #333333; padding-left: 20px; background: url('../img/check_icon.png') left center no-repeat; margin-bottom: 5px;}
 
 
 .th_layouts_target {background: #fff; padding: 35px 0; display: none; padding-top: 0;}

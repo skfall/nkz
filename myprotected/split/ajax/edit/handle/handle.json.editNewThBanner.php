@@ -11,6 +11,8 @@
 	$now = date("Y-m-d H:i:s", time());
 	$cardUpd = array(
 		'caption'			=> $_POST['caption'],
+		'sub_1'			=> $_POST['sub_1'],
+		'sub_2'			=> $_POST['sub_2'],
 		'pos'			=> (int)$_POST['pos'],
 		'block'			=> $_POST['block'][0],
 		'modified' => $now

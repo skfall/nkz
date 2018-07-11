@@ -122,11 +122,12 @@
 					<div class="owl-carousel primary">
 						<?php foreach ($cottage->layouts as $key => $layout): ?>
 							<?php 
-								$source = $layout->filename ? LAYOUTS.$layout->filename : IMG_PATH.'def_logo.jpg'; 
+								$source = $layout->filename ? COTTAGES_PATH.$layout->filename : IMG_PATH.'def_logo.jpg'; 
 							?>
 							<div class="item" style="overflow:hidden;">
 								<a href="<?= $source; ?>" class="fancybox" data-fancybox="ctl_<?= $cottage->id ?>">
 									<img src="<?= $source; ?>" alt="Layout" style="width:auto;height:auto;max-width:70%;margin:0 auto;display:block;" />
+									<div class="space20"></div>
 								</a>
 								<?php /* <div class="image" style="background-image: url('<?= $source; ?>');"></div> */ ?>
 							</div>
@@ -135,7 +136,7 @@
 					<div class="owl-carousel secondary">
 						<?php foreach ($cottage->layouts as $key => $dot): ?>
 							<?php 
-								$source = $dot->filename ? LAYOUTS.'crop/500x350_'.$dot->filename : IMG_PATH.'def_logo.jpg'; 
+								$source = $dot->filename ? COTTAGES_PATH.'crop/500x350_'.$dot->filename : IMG_PATH.'def_logo.jpg'; 
 							?>
 							<div class="item">
 								<div class="image" style="background-image: url('<?= $source; ?>');"></div>

@@ -2,7 +2,6 @@
 	//********************
 	//** WEB MIRACLE TECHNOLOGIES
 	//********************
-	
 	// get post
 	switch ($_POST['table']) {
 		case 'th_gal':
@@ -39,6 +38,12 @@
 			break;
 		case 'nth_ready_th':
 			$appTable = 'osc_nth_ready_th_layouts';
+			break;
+		case 'unc_cottages':
+			$appTable = 'osc_unc_cattages_layouts';
+			break;
+		case 'unc_th':
+			$appTable = 'osc_unc_th_layouts';
 			break;
 		default:
 			break;

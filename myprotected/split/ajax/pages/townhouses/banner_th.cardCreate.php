@@ -13,6 +13,8 @@
 	
 	$cardTmp = array(
 		'Заголовок'				=>	array( 'type'=>'area', 		'field'=>'caption', 		'params'=>array( 'size'=>100, 'hold'=>'Caption' ) ),
+		'Подзаголовок 1'				=>	array( 'type'=>'area', 		'field'=>'sub_1', 		'params'=>array( 'size'=>100, 'hold'=>'Подзаголовок 1' ) ),
+		'Подзаголовок 2'				=>	array( 'type'=>'area', 		'field'=>'sub_2', 		'params'=>array( 'size'=>100, 'hold'=>'Подзаголовок 2' ) ),
 					
 		'clear-1'				=>	array( 'type'=>'clear' ),
 		

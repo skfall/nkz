@@ -155,9 +155,7 @@
 
 
 			$info = $db->q($query);
-			
 			$is_continue = false;
-
 			switch($table)
 			{	
 				case 'users_types':
