@@ -113,3 +113,11 @@ header .appointment_btn.upd:hover {opacity: 0.8;}
     .upd_house_owl_primary .item {padding: 0 10px;}
     .upd_house_owl_secondary .item img {max-height: 50px;}
 }
+
+
+
+.ct_new_slide {width: 100%; height: auto; min-height: 330px;}
+
+@media (max-width: 993px) {
+    body.cottages {padding-top: 78px;}
+}

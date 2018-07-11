@@ -43,7 +43,9 @@
     <?= $this->Html->css('ct_fonts.min') ?>
 
 
+
    <link rel="stylesheet" type="text/css" href="<?= RS.'css/new_th.css'; ?>">
+   <link rel="stylesheet" type="text/css" href="<?= RS.'css/upd.css'; ?>">
 
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68794044-1"></script>
@@ -208,6 +210,9 @@
             echo $this->Html->script('simplebar.min');
         }
     ?>
+
+    <script type="text/javascript" src="<?= RS.'js/upd.js'; ?>"></script>
+
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXyEPsmtB3A9txZSYdV2j7d8TeAj82iWQ">
         </script>

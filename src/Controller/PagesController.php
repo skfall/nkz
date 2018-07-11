@@ -442,6 +442,7 @@ class PagesController extends AppController {
         $page = "cottages";
         $PA = "cottages";
         $menu_name = $this->Cottages->getMenuByAlias("cottages")['name'];
+
         $preloader_page_name = $menu_name;
 
         $banner = $this->Cottages->getCTBanner();
@@ -461,6 +462,42 @@ class PagesController extends AppController {
         if (!$gallery || !$gallery['items']) {
             $gallery = array();
         }
+
+       
+
+        $meta_data = $this->Cottages->getUniMeta('cottages');
+
+        if (isset($meta_data['meta_title']) && $meta_data['meta_title']) {
+            $meta_title = $meta_data['meta_title'];
+            $this->set('meta_title', $meta_title);
+        }
+        if (isset($meta_data['meta_desc']) && $meta_data['meta_desc']) {
+            $meta_desc = $meta_data['meta_desc'];
+            $this->set('meta_desc', $meta_desc);
+        }
+        if (isset($meta_data['meta_keys']) && $meta_data['meta_keys']) {
+            $meta_keys = $meta_data['meta_keys'];
+            $this->set('meta_keys', $meta_keys);
+        }
+
+        $this->set([
+            'preloader_page_name' => $preloader_page_name,
+            'menu_name' => $menu_name,
+            'page' => $page,
+            'banner' => $banner,
+            'reasons' => $reasons,
+            'equip' => $equip,
+            'gallery' => $gallery,
+            'PA' => $PA
+        ]);
+    }
+
+    public function cottageItem(){
+        $page = "cottages";
+        $PA = "cottages";
+        $menu_name = $this->Cottages->getMenuByAlias("cottages")['name'];
+
+        $preloader_page_name = $menu_name;
 
         $genplan = array();
         $genplan_array = $this->Cottages->getGenplan();
@@ -487,10 +524,6 @@ class PagesController extends AppController {
             'preloader_page_name' => $preloader_page_name,
             'menu_name' => $menu_name,
             'page' => $page,
-            'banner' => $banner,
-            'reasons' => $reasons,
-            'equip' => $equip,
-            'gallery' => $gallery,
             'genplan' => $genplan,
             'PA' => $PA
         ]);

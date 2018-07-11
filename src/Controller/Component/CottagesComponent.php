@@ -22,9 +22,12 @@ class CottagesComponent extends HelpComponent {
     public function getCTEquip(){
         $q = "SELECT M.* FROM `osc_ct_equip` AS M WHERE M.id = 1 AND M.block = 0 LIMIT 1";
         $result = $this->q($q, 1);
-        $result['items'] = array();
-        $q = "SELECT M.* FROM `osc_ct_equip_items` AS M LIMIT 200";
-        $result['items'] = $this->q($q);
+        if ($result) {
+
+            $result['items'] = array();
+            $q = "SELECT M.* FROM `osc_ct_equip_items` AS M LIMIT 200";
+            $result['items'] = $this->q($q);
+        }
         return $result;
     }
 

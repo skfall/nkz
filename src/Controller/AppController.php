@@ -17,7 +17,7 @@ class AppController extends Controller {
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
 
-        if ($this->request->action == "cottages") {
+        if ($this->request->action == "cottages" || $this->request->action == "cottageItem") {
             $this->loadComponent('Cottages');
             $this->viewBuilder()->layout('cottages');
         }else{
