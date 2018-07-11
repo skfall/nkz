@@ -247,4 +247,27 @@ class CottagesComponent extends HelpComponent {
         ";
         return $this->q($q, 1);
     }
+
+    public function getUpdLayouts(){
+        $cottages = TableRegistry::get('osc_unc_cottages')->find()->where(['block' => 0])->order(['pos'])->all();
+        if ($cottages && count($cottages) > 0) {
+            foreach ($cottages as $k => $ct) {
+                $ct['layouts'] = [];
+                $layouts = TableRegistry::get('osc_unc_cattages_layouts')->find()->where(['block' => 0, 'cottage_id' => $ct->id])->all();
+                if ($layouts && count($layouts) > 0) $ct['layouts'] = $layouts;
+            }
+        }
+        return $cottages;
+    }
+
+    public function getUpdCottage($id){
+        $id = (int)$id;
+        $cottage = TableRegistry::get('osc_unc_cottages')->find()->where(['block' => 0, 'id' => $id])->first();
+        if ($cottage && count($cottage) > 0){
+            $cottage['layouts'] = [];
+            $layouts = TableRegistry::get('osc_unc_cattages_layouts')->find()->where(['block' => 0, 'cottage_id' => $cottage->id])->all();
+            if ($layouts && count($layouts) > 0) $cottage['layouts'] = $layouts;
+        }
+        return $cottage;
+    }
 }

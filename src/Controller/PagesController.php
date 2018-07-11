@@ -451,6 +451,9 @@ class PagesController extends AppController {
         if (!$equip || !$equip['items']) {
             $equip = array();
         }
+
+        $manager = $this->Model->getManager();
+        $manager_menu = $this->Model->getManagerMenu();
         //$ct_layouts_array = $this->Cottages->getCTLayouts();
 
         // $layout_data = $ct_layouts_array['layout_data'];
@@ -463,7 +466,7 @@ class PagesController extends AppController {
             $gallery = array();
         }
 
-       
+        $upd_cottages_list = $this->Cottages->getUpdLayouts();
 
         $meta_data = $this->Cottages->getUniMeta('cottages');
 
@@ -488,7 +491,10 @@ class PagesController extends AppController {
             'reasons' => $reasons,
             'equip' => $equip,
             'gallery' => $gallery,
-            'PA' => $PA
+            'PA' => $PA,
+            'cottages_list' => $upd_cottages_list,
+            'manager' => $manager,
+            'manager_menu' => $manager_menu
         ]);
     }
 
@@ -499,11 +505,22 @@ class PagesController extends AppController {
 
         $preloader_page_name = $menu_name;
 
+        $upd_cottages_list = $this->Cottages->getUpdLayouts();
+        $curr_cottage_id = (int)LA;
+        $curr_cottage = $this->Cottages->getUpdCottage($curr_cottage_id);
+        if (!$curr_cottage) $this->Help->r2(RS.'404/');
+
         $genplan = array();
         $genplan_array = $this->Cottages->getGenplan();
         foreach ($genplan_array as $key => $value) {
             $genplan[$value['id']] = $value; 
         }
+        $manager = $this->Model->getManager();
+        $manager_menu = $this->Model->getManagerMenu();
+
+        
+        $env = $this->Model->getHomeEnv();
+        $traffic = $this->Model->getNhTraffic();
 
         $meta_data = $this->Cottages->getUniMeta('cottages');
 
@@ -525,7 +542,13 @@ class PagesController extends AppController {
             'menu_name' => $menu_name,
             'page' => $page,
             'genplan' => $genplan,
-            'PA' => $PA
+            'PA' => $PA,
+            'curr_cottage' => $curr_cottage,
+            'upd_cottages_list' => $upd_cottages_list,
+            'manager' => $manager,
+            'manager_menu' => $manager_menu,
+            'env' => $env,
+            'traffic' => $traffic,
         ]);
     }
 

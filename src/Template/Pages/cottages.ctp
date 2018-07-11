@@ -37,7 +37,7 @@
 					<div class="upd_sub_caption_2"><?= $formatted_sub_2 ?: "" ?></div>
 
 					<div class="slide_btns">
-						<a class="btn_2" href="javascript:void(0);" onclick="upd.scroll_to('#objects');" style="margin-right:20px;">
+						<a class="btn_2" href="javascript:void(0);" onclick="upd.scroll_to('#cottages_layouts');" style="margin-right:20px;">
 							Посмотреть планировки
 						</a>
 						<a class="btn_1" href="#" data-toggle="modal" data-target="#visit_modal" onclick="ga('send', 'event', 'Кнопка', 'Записаться на просмотр');" style="margin-right:0;">
@@ -170,3 +170,203 @@
 </section>
 */
 ?>
+
+
+<section class="layouts_area ct_layouts_list" id="cottages_layouts">
+	<div class="container">
+		<?php // LAYOUTS START ?>
+		<?php if (isset($cottages_list) && $cottages_list && count($cottages_list) > 0): ?>
+			<?php foreach ($cottages_list as $key => $cottage): ?>
+				
+
+				<!-- LAYOUT ITEM -->
+				<div class="layout_item">
+					
+					<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 properties">
+						<div class="text">
+							<?php if (isset($cottage->properties) && $cottage->properties): ?>
+								<?php
+									$properties = explode(';', $cottage->properties);
+									if ($properties[count($properties) - 1] == '') array_pop($properties);
+
+								?>
+
+								<a href="<?= RS.'cottages/'.$cottage->id.'/'; ?>" class="upd_cottage_name"><?= $cottage->caption ?: "" ?></a>
+								<div class="upd_top_flat_box hidden-sm hidden-xs">
+
+									<a href="javascript:void(0);" class="order_btn bggreen upd" data-toggle="modal" data-target="#visit_modal">Записаться на просмотр</a>
+
+									<p class="upd_consult_text">или получите консультацию по телефону</p>
+									<a href="tel:0443948819" class="upd_consult_phone">044 394 88 19</a>
+
+									<?php if ($cottage->price || $cottage->area) { ?>
+										<div class="upd_flat_underline"></div>
+									<?php }?>
+									<?php if ($cottage->price) { ?>
+										<div class="left">
+											<p>Цена коттеджа</p>
+											<p><span class="value"><?= $cottage->price; ?></span> грн/м<sup>2</sup></p>
+										</div>
+									<?php }?>
+
+									<?php if ($cottage->area) { ?>
+										<div class="right">
+											<p>Площадь коттеджа</p>
+											<p><span class="value"><?= $cottage->area; ?></span> м<sup>2</sup></p>
+										</div>
+									<?php }?>
+									<div class="clear"></div>
+									<?php if ($cottage->price || $cottage->area) { ?>
+										<div class="upd_flat_underline"></div>
+									<?php }?>
+								</div>
+
+								<table class="params">
+									<?php foreach ($properties as $key => $prop): ?>
+										<?php
+											$prop_row = explode('*', $prop);
+											$area_name = $prop_row[0];
+											$area_value = str_replace('м2', 'м<sup>2</sup>', $prop_row[1]);
+
+										?>
+
+										<tr class="<?= $key == 0 ? "first" : ""; ?>">
+											<td><?= $area_name; ?></td>
+											<td><?= $area_value; ?></td>
+										</tr>
+									<?php endforeach ?>
+								</table>
+							<?php endif ?>
+							<!-- DESKTOP FEATURES -->
+							<div class="features hidden-sm hidden-xs">
+								
+								<?php 
+									$features = explode(';', $cottage->features);
+									if (count($features) > 0 && $cottage->features) { ?>
+										<p><a href="javascript:void(0);" class="active upd_about_proj">В стоимость входит</a> </p>
+										<div class="features_c active">
+											<?php 
+												
+											?>
+											<ul>
+												<?php foreach ($features as $key => $feature): ?>
+													<li><?= $feature; ?></li>
+												<?php endforeach ?>
+											</ul>	
+										</div>
+									<?php }
+								?>
+								
+								<div class="clear"></div>
+								
+								
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 images">
+						<?php if (isset($cottage->layouts) && $cottage->layouts): ?>
+							<div class="owl-carousel primary">
+								<?php foreach ($cottage->layouts as $key => $layout): ?>
+									<?php 
+										$source = $layout->filename ? LAYOUTS.$layout->filename : IMG_PATH.'def_logo.jpg'; 
+									?>
+									<div class="item" style="overflow:hidden;">
+										<a href="<?= $source; ?>" class="fancybox" data-fancybox="ctl_<?= $cottage->id ?>">
+											<img src="<?= $source; ?>" alt="Layout" style="width:auto;height:auto;max-width:70%;margin:0 auto;display:block;" />
+										</a>
+										<?php /* <div class="image" style="background-image: url('<?= $source; ?>');"></div> */ ?>
+									</div>
+								<?php endforeach ?>
+							</div>
+							<div class="owl-carousel secondary">
+								<?php foreach ($cottage->layouts as $key => $dot): ?>
+									<?php 
+										$source = $dot->filename ? LAYOUTS.'crop/500x350_'.$dot->filename : IMG_PATH.'def_logo.jpg'; 
+									?>
+									<div class="item">
+										<div class="image" style="background-image: url('<?= $source; ?>');"></div>
+									</div>
+								<?php endforeach ?>
+							</div>
+						<?php endif ?>
+						
+
+						<div class="clear"></div>
+
+						<style type="text/css">
+							.upd_about_proj {font: 18px "RobotoB", Tahoma; color: #333 !important; text-decoration: none !important; cursor: default !important;}
+							@media(max-width: 993px){
+								.upd_about_proj_box {display: none;}
+							}
+						</style>
+
+						<?php if ($cottage->cottage_desc) { ?>
+							<div class="upd_about_proj_box">
+								<a href="javascript:void(0);" class="active upd_about_proj">О проекте</a>
+								<div class="space10"></div>
+								
+								<?php if (isset($cottage->cottage_desc) && $cottage->cottage_desc): ?>
+								<div class="desc_c features_tab active <?= $cottage_desc_active; ?>">
+									<?= $cottage->cottage_desc; ?>
+								</div>
+								<?php endif ?>
+							</div>
+						<?php } ?>
+						
+						
+								
+						<!-- MOB FEATURES -->
+						<div class="features hidden-lg hidden-md">
+							<p>
+								<?php 
+									$feature_presence = false;
+								?>
+								<?php if (isset($cottage->features) && $cottage->features): ?>
+									<a href="javascript:void(0);" data-target=".features_c" class="active">Особенности</a> 
+									<?php $feature_presence = true; ?>
+								<?php endif ?>
+								<?php if (isset($cottage->cottage_desc) && $cottage->cottage_desc): ?>
+									<?php $cottage_desc_active = !$feature_presence ? "active" : ""; ?>
+									<a href="javascript:void(0);" class="<?= $cottage_desc_active; ?>" data-target=".desc_c">Описание</a>
+								<?php endif ?>
+
+							</p>
+
+							<?php if (isset($cottage->features) && $cottage->features): ?>
+								<?php $features = explode(';', $cottage->features); ?>
+								<div class="features_c features_tab active">
+									<ul>
+										<?php foreach ($features as $key => $feature): ?>
+											<li><?= $feature; ?></li>
+										<?php endforeach ?>
+									</ul>	
+								</div>
+							<?php endif ?>
+
+							<?php if (isset($cottage->cottage_desc) && $cottage->cottage_desc): ?>
+								<div class="desc_c features_tab <?= $cottage_desc_active; ?>">
+									<?= $cottage->cottage_desc; ?>
+								</div>
+							<?php endif ?>
+
+
+							
+							<div class="clear"></div>
+							
+							<a href="#" class="order_btn bggreen" data-toggle="modal" data-target="#visit_modal">Записаться на просмотр</a>
+						</div>
+					</div>
+					
+					<div class="clear"></div>
+				</div>
+				<!-- LAYOUT ITEM END -->
+			<?php endforeach ?>
+		<?php else: ?>
+			<p>Список пуст</p>
+		<?php endif ?>
+
+	</div>
+</section>
+
+<?= $this->element('manager'); ?>
+<div class="space20"></div>

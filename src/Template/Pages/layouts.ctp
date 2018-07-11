@@ -272,7 +272,7 @@
 									<?php }?>
 									<?php if ($flat->price) { ?>
 										<div class="left">
-											<p>Цена квартиры от</p>
+											<p>Цена квартиры </p>
 											<p><span class="value"><?= $flat->price; ?></span> грн/м<sup>2</sup></p>
 										</div>
 									<?php }?>
@@ -368,7 +368,10 @@
 										$source = $layout->filename ? LAYOUTS.$layout->filename : IMG_PATH.'def_logo.jpg'; 
 									?>
 									<div class="item" style="overflow:hidden;">
-										<img src="<?= $source; ?>" alt="Layout" style="width:auto;height:auto;max-width:70%;margin:0 auto;display:block;" />
+										<a href="<?= $source; ?>" class="fancybox" data-fancybox="fll_<?= $flat->id ?>">
+											<img src="<?= $source; ?>" alt="Layout" style="width:auto;height:auto;max-width:70%;margin:0 auto;display:block;" />
+										</a>
+										
 										<?php /* <div class="image" style="background-image: url('<?= $source; ?>');"></div> */ ?>
 									</div>
 								<?php endforeach ?>

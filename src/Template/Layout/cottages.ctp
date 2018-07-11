@@ -41,6 +41,7 @@
     <?= $this->Html->css('cottages.min') ?>
     <?= $this->Html->css('fonts.min') ?>
     <?= $this->Html->css('ct_fonts.min') ?>
+    <?= $this->Html->css('newhome') ?>
 
 
 

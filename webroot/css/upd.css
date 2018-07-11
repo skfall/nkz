@@ -121,3 +121,63 @@ header .appointment_btn.upd:hover {opacity: 0.8;}
 @media (max-width: 993px) {
     body.cottages {padding-top: 78px;}
 }
+
+@media (min-width: 994px){
+    .layout_item .properties {
+        float: right;
+    }
+}
+
+.layouts_area .layout_item {background: #fff; border: 1px solid #eee; padding: 20px 25px; margin-bottom: 30px; box-shadow: 0 0 20px 0 #eee;}
+
+.ct_layouts_list {padding: 80px 0 0 0;}
+
+.ct_layouts_list .layout_item .properties {margin-top: 0;}
+.ct_layouts_list .layout_item .upd_cottage_name {font: 35px 'RobotoB', Tahoma; color: #333; margin-bottom: 20px; display: block;}
+
+.layout_item .features_tab {display: none;}
+.layout_item .features_tab.active {display: block;}
+
+.ct_layouts_list .desc_c.features_tab.active {padding-bottom: 20px;}
+
+
+.layouts_area {padding: 30px 0; background: #fbfbfb;}
+.layouts_area .caption {font: 32px 'RobotoB', Tahoma; color: #333333; margin-bottom: 20px;}
+.layouts_area .filter {background: #fbf3dc; padding: 10px; position: relative; margin-bottom: 33px;}
+.layouts_area .filter p {font: 18px 'Roboto', Tahoma; color: #333333;}
+.layouts_area .filter li {display: inline-block;}
+
+.layouts_area .filter a {font: 18px 'RobotoB', Tahoma; border: 1px solid #ccc; border-radius: 20px; background: #fff; cursor: pointer; min-width: 40px;margin-right: 2px; text-decoration: none; display: block; color: #333; padding: 7px 14px; margin-bottom: 10px;}
+.layouts_area .filter .mult {min-width: 62px; border-radius: 50px;}
+.layouts_area .filter a.active {border-color: #d4522b; color: #cd3829;}
+.layouts_area .filter a:hover {border-color: #d4522b;}
+
+.upd_ct_intro .filter {padding-top: 20px;}
+
+.upd_ct_intro .upd_page_caption {font: 36px 'RobotoCB', Tahoma; color: #333333; margin-bottom: 20px;}
+
+.upd_ct_inner_item .layout_item {background: #fbfbfb; border: 0px solid #eee; padding: 20px 25px; margin-bottom: 30px; box-shadow: 0 0 0 0 #eee;}
+.upd_ct_intro.layouts_area {padding-bottom: 0;}
+
+@media(max-width: 993px){
+	.env_c .path_time {display: none;}
+
+	.trick_master {height: 60px; padding-bottom: 20px; position: relative;}
+	.env_nav {overflow: hidden; height: 60px; overflow-x: auto;}
+	.hide_scroll_bar {display: block; position: absolute; width: 100%; height: 20px; left: 0; bottom: 0; background: #f8f7f6;}
+	.env_nav ul {width: 1000px;}
+}
+
+@media(max-width: 768px){
+    .upd_ct_inner_item .layout_item {padding: 0;}
+    .upd_ct_intro  .layouts_area {padding-top: 0;}
+    .upd_ct_intro .filter {margin-bottom: 10px;}
+    
+    .flats_manager .manager_photo_wrapper img {max-height: 150px; margin-bottom: 15px;}
+}
+
+@media(max-width: 420px) {
+    .cottages_genplan .sect_caption2 {margin-top: -50px;}
+}
+
+.cottages .home_tabs_body {padding-bottom: 0;}
