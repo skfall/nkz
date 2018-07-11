@@ -792,3 +792,46 @@ footer .questions a {text-decoration: underline;}
 .traffic .route:hover {border-color: #d51820;}
 
 .traffic .notification {background: #d51820 url('../img/bus.png') 90px center no-repeat; padding-left: 230px; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; font: 16px 'RobotoB', Tahoma; color: #fff;}
+
+.banner_text {position: absolute; width: 100%; top: 160px;  left: 0; }
+.slide_text {font: 60px 'RobotoB', Tahoma; color: #fff; text-shadow: 0 0 25px #000; text-align: center; line-height: 50px; letter-spacing: 1px; margin-bottom: 25px;}
+.upd_sub_caption_1 {font: 20px 'RobotoB', Tahoma; color: #fff; text-shadow: 0 0 25px #000; text-align: center; text-transform: uppercase; margin-bottom: 20px; letter-spacing: 2px;}
+.upd_sub_caption_2 {font: 16px 'RobotoR', Tahoma; color: #fff; text-shadow: 0 0 25px #000; text-align: center; text-transform: uppercase; margin-bottom: 50px; letter-spacing: 2px;}
+
+
+@media(max-width: 1440px){
+    .banner_text {top: 100px;}
+}
+
+@media(max-width: 1200px){
+    .banner_text {top: 50px;}
+    .slide_text {font-size: 35px; line-height: 32px;}
+    .upd_sub_caption_1 {font-size: 18px; line-height: 20px;}
+}
+
+
+@media(max-width: 993px){
+    .slide_text {font-size: 30px; margin-bottom: 15px;}
+    .upd_sub_caption_2 {margin-bottom: 25px;}
+    .banner_text .slide_btns a {padding: 10px 15px;}
+    .upd_sub_caption_1 {margin-bottom: 15px; font-size: 16px;}
+    .upd_sub_caption_2 {font-size: 16px;}
+}
+
+
+@media(max-width: 768px){
+    .banner_text {top: 30px;}
+    .slide_text {line-height: 25px; font-size: 25px;}
+    .th_slider .item img {min-height: 330px;}
+
+    .upd_sub_caption_1, .upd_sub_caption_2 {letter-spacing: 0;}
+
+    .slide_btns .btn_1 {margin-right: 10px;}
+    .banner_text .slide_btns a {padding: 10px; letter-spacing: 0;}
+}
+
+@media(max-width: 420px){
+    .slide_text {font-size: 25px;}
+    .banner_text .slide_btns a {display: block; margin: 0 auto; width: 80%; margin-bottom: 15px;}
+
+}

@@ -226,6 +226,7 @@ class PagesController extends AppController {
         $ready_th = $this->Th->getThReadyTh();
         $blocks = $this->Th->getThBlocks();
 
+        $townhouses_layouts = $this->Th->getUpdThLayouts();
         
 
         $meta = $this->Model->getMetaData("townhouses");
@@ -242,7 +243,7 @@ class PagesController extends AppController {
             $this->set('meta_keys', $meta_keys);
         }
 
-        $view_model = compact('page', 'manager', 'manager_menu', 'banners', 'intro', 'ready_th', 'blocks');
+        $view_model = compact('page', 'manager', 'manager_menu', 'banners', 'intro', 'ready_th', 'blocks', 'townhouses_layouts');
         $this->set($view_model);
     }
 
@@ -257,6 +258,11 @@ class PagesController extends AppController {
         $gal = $this->Th->getThGal();
         $info1 = $this->Th->getThInfoblock1();
         $info2 = $this->Th->getThInfoblock2();
+
+        $townhouses_layouts = $this->Th->getUpdThLayouts();
+        $curr_th_id = (int)LA;
+        $curr_th = $this->Th->getUpdTh($curr_th_id);
+        if (!$curr_th) $this->Help->r2(RS.'404/');
         
 
         $env = $this->Model->getHomeEnv();
@@ -276,7 +282,7 @@ class PagesController extends AppController {
             $this->set('meta_keys', $meta_keys);
         }
 
-        $view_model = compact('page', 'manager', 'manager_menu', 'video', 'gal', 'blocks', 'info1', 'info2', 'traffic', 'env');
+        $view_model = compact('page', 'manager', 'manager_menu', 'video', 'gal', 'blocks', 'info1', 'info2', 'traffic', 'env', 'curr_th', 'townhouses_layouts');
         $this->set($view_model);
     }
 

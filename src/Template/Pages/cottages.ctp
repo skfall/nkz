@@ -361,8 +361,7 @@
 				</div>
 				<!-- LAYOUT ITEM END -->
 			<?php endforeach ?>
-		<?php else: ?>
-			<p>Список пуст</p>
+
 		<?php endif ?>
 
 	</div>
