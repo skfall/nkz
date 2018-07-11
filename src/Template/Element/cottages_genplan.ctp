@@ -13,7 +13,7 @@
 
     </style>
   </defs>
-  <title>Cottages genplan</title>
+  <title></title>
   <rect class="cls-1" width="1920" height="987"/>
   <polygon class="cls-2 cottage_poly <?= ($genplan[12]['status'] == '1' ? 'sector' : ($genplan[12]['status'] == '2' ? 'available' : ($genplan[12]['status'] == '3' ? 'sold' : 'not_set'))); ?>" data-text="<?= ($genplan[12]['ct_desc'] ? $genplan[12]['ct_desc'] : ''); ?>" data-status="<?= $genplan[12]['status']; ?>" data-ctid="12" points="943.5 706.75 855.67 706.75 855.67 706.75 832 706.75 832 900.67 943.5 900.67 943.5 706.75"/>
   <polygon class="cls-3 cottage_poly <?= ($genplan[17]['status'] == '1' ? 'sector' : ($genplan[17]['status'] == '2' ? 'available' : ($genplan[17]['status'] == '3' ? 'sold' : 'not_set'))); ?>" data-text="<?= ($genplan[17]['ct_desc'] ? $genplan[17]['ct_desc'] : ''); ?>" data-status="<?= $genplan[17]['status']; ?>" data-ctid="17" points="947.5 792.5 1106.66 792.5 1106.02 701.5 947.5 701.5 947.5 792.5"/>
