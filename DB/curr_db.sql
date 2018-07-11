@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Час створення: Лип 10 2018 р., 18:08
+-- Час створення: Лип 11 2018 р., 17:40
 -- Версія сервера: 5.7.19
 -- Версія PHP: 7.1.9
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `osc_admin_menu` (
   `dateModify` datetime NOT NULL,
   `adminMod` int(7) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=111 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `osc_admin_menu`
@@ -174,7 +174,9 @@ INSERT INTO `osc_admin_menu` (`id`, `type`, `parent`, `table`, `additional_field
 (105, 1, 51, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Секция \"Добро пожаловать\"', 'nh_intro', '0', 0, '', 0, '#', '2017-05-02 16:13:08', '2017-05-02 16:13:08', 0),
 (106, 1, 51, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Секция \"Преимущества\"', 'nh_grid', '0', 0, '', 0, '#', '2017-05-02 16:13:08', '2017-05-02 16:13:08', 0),
 (107, 1, 51, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Секция \"Пробки\"', 'nh_traffic', '0', 0, '', 0, '#', '2017-05-02 16:13:08', '2017-05-02 16:13:08', 0),
-(108, 1, 86, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Готовые коттеджи (new)', 'ready_ct_new', 'fa-th-large', 0, NULL, 0, '#', '2018-01-14 00:00:00', '2018-01-14 00:00:00', 0);
+(108, 1, 86, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Готовые коттеджи (new)', 'ready_ct_new', 'fa-th-large', 0, NULL, 0, '#', '2018-01-14 00:00:00', '2018-01-14 00:00:00', 0),
+(109, 1, 86, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Планировки (Коттеджи)', 'ct_layouts', 'fa-th-large', 0, NULL, 0, '#', '2018-01-14 00:00:00', '2018-01-14 00:00:00', 0),
+(110, 1, 94, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, 'Планировки (Таунхаусы)', 'upd_th_layouts', 'fa-th-large', 0, NULL, 0, '#', '2018-01-14 00:00:00', '2018-01-14 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -486,7 +488,7 @@ CREATE TABLE IF NOT EXISTS `osc_ct_banner` (
 --
 
 INSERT INTO `osc_ct_banner` (`id`, `caption`, `sub_caption`, `details`, `filename`, `meta_title`, `meta_keys`, `meta_desc`, `is_index`, `block`, `dateCreate`, `dateModify`, `adminMod`) VALUES
-(1, 'Коттеджи', 'в Новой Конча-Заспе', 'Наш коттеджный городок клубного типа предлагает инвесторам различные варианты планировок и метражей земельного участка. Покупатели  сами себе выбирают расположение будущего дома.\r\nВъезд на охраняемую территорию городка происходит исключительно по пропускам. А в целях благоустройства мы позаботились о наличии детских площадок и живописным озеленением территории.  ', 'ct_st_20170613155013188.jpg', NULL, NULL, NULL, 1, 0, '2017-06-05 21:25:20', '2017-06-05 21:25:20', NULL);
+(1, 'Коттеджи \r\nв ЖК \"Новая Конча-заспа\"', 'Коттеджи 80 / 125 / 200 м2', 'Престижная локация в 7-ми ки от Киева.\r\nДома построены, готовы к заселению', 'ct_st_20180711145457472.jpg', NULL, NULL, NULL, 1, 0, '2017-06-05 21:25:20', '2017-06-05 21:25:20', NULL);
 
 -- --------------------------------------------------------
 
@@ -507,7 +509,7 @@ CREATE TABLE IF NOT EXISTS `osc_ct_equip` (
 --
 
 INSERT INTO `osc_ct_equip` (`id`, `caption`, `block`) VALUES
-(1, 'Комплектация коттеджей', 0);
+(1, 'Комплектация коттеджей', 1);
 
 -- --------------------------------------------------------
 
@@ -1359,7 +1361,7 @@ CREATE TABLE IF NOT EXISTS `osc_logs` (
   `userid` int(11) NOT NULL DEFAULT '0',
   `ip` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=262 DEFAULT CHARSET=utf8 COMMENT='Project logs';
+) ENGINE=MyISAM AUTO_INCREMENT=263 DEFAULT CHARSET=utf8 COMMENT='Project logs';
 
 --
 -- Дамп даних таблиці `osc_logs`
@@ -1626,7 +1628,8 @@ INSERT INTO `osc_logs` (`id`, `date`, `type`, `description`, `userid`, `ip`) VAL
 (258, '2018-06-22 14:01:02', 1, 'Admin login: Success login.', 2, '213.159.242.223'),
 (259, '2018-06-23 20:25:03', 1, 'Admin login: Success login.', 1, '95.158.43.196'),
 (260, '2018-07-09 22:47:53', 1, 'Admin login: Success login.', 1, '95.158.43.230'),
-(261, '2018-07-10 14:36:24', 1, 'Admin login: Success login.', 1, '::1');
+(261, '2018-07-10 14:36:24', 1, 'Admin login: Success login.', 1, '::1'),
+(262, '2018-07-11 14:36:50', 1, 'Admin login: Success login.', 1, '::1');
 
 -- --------------------------------------------------------
 
@@ -2051,6 +2054,8 @@ CREATE TABLE IF NOT EXISTS `osc_nth_banner` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(255) DEFAULT NULL,
   `caption` varchar(255) DEFAULT NULL,
+  `sub_1` varchar(255) DEFAULT NULL,
+  `sub_2` varchar(255) DEFAULT NULL,
   `pos` int(11) NOT NULL DEFAULT '0',
   `block` int(11) NOT NULL DEFAULT '0',
   `created` datetime DEFAULT NULL,
@@ -2062,8 +2067,8 @@ CREATE TABLE IF NOT EXISTS `osc_nth_banner` (
 -- Дамп даних таблиці `osc_nth_banner`
 --
 
-INSERT INTO `osc_nth_banner` (`id`, `image`, `caption`, `pos`, `block`, `created`, `modified`) VALUES
-(1, 'nth_b_20180612165756154.jpg', 'Престижный классический пригород', 1, 0, '2018-06-11 00:00:00', '2018-06-12 17:11:23');
+INSERT INTO `osc_nth_banner` (`id`, `image`, `caption`, `sub_1`, `sub_2`, `pos`, `block`, `created`, `modified`) VALUES
+(1, 'nth_b_20180711184858704.jpg', 'Таунхаусы \r\nв ЖК \"Новая Конча-заспа\"', 'Дома 132 / 140 / 160 м2', 'Престижная локация в 7-ми км от Киева.\r\nСистема \"Умный дом\". Свой участок. Индивидуальное паркоместо.', 1, 0, '2018-06-11 00:00:00', '2018-07-11 19:35:58');
 
 -- --------------------------------------------------------
 
@@ -2093,9 +2098,9 @@ CREATE TABLE IF NOT EXISTS `osc_nth_blocks` (
 --
 
 INSERT INTO `osc_nth_blocks` (`id`, `name`, `type`, `row_1`, `row_2`, `row_3`, `row_4`, `preview`, `block`, `pos`, `created`, `modified`) VALUES
-(1, 'Амстердам', 1, 'площадь дома*161', 'цоколь*50', 'участок*44-77', 'стоимость от*141 250', 'nth_lprv_20180614141709842.jpg', 0, 0, '2018-06-11 00:00:00', '2018-06-15 16:09:10'),
-(2, 'Будапешт', 1, 'площадь дома*132', 'цоколь*38', 'участок*35-47', 'стоимость от*120 000', 'nth_lprv_20180614141830282.jpg', 0, 0, '2018-06-11 00:00:00', '2018-06-15 16:21:13'),
-(3, 'Прага', 1, 'площадь дома*140', 'цоколь*40', 'участок*43-99', 'стоимость от*122 500', 'nth_lprv_20180614141755672.jpg', 0, 0, '2018-06-11 00:00:00', '2018-06-15 16:07:03');
+(1, 'Амстердам', 1, 'площадь дома*161', 'цоколь*50', 'участок*44-77', 'стоимость от*141 250', 'nth_lprv_20180614141709842.jpg', 1, 0, '2018-06-11 00:00:00', '2018-06-15 16:09:10'),
+(2, 'Будапешт', 1, 'площадь дома*132', 'цоколь*38', 'участок*35-47', 'стоимость от*120 000', 'nth_lprv_20180614141830282.jpg', 1, 0, '2018-06-11 00:00:00', '2018-06-15 16:21:13'),
+(3, 'Прага', 1, 'площадь дома*140', 'цоколь*40', 'участок*43-99', 'стоимость от*122 500', 'nth_lprv_20180614141755672.jpg', 1, 0, '2018-06-11 00:00:00', '2018-06-15 16:07:03');
 
 -- --------------------------------------------------------
 
@@ -4474,6 +4479,116 @@ CREATE TABLE IF NOT EXISTS `osc_translate` (
 -- --------------------------------------------------------
 
 --
+-- Структура таблиці `osc_unc_cattages_layouts`
+--
+
+DROP TABLE IF EXISTS `osc_unc_cattages_layouts`;
+CREATE TABLE IF NOT EXISTS `osc_unc_cattages_layouts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cottage_id` int(11) NOT NULL DEFAULT '0',
+  `filename` varchar(255) DEFAULT NULL,
+  `block` int(11) NOT NULL DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `osc_unc_cattages_layouts`
+--
+
+INSERT INTO `osc_unc_cattages_layouts` (`id`, `cottage_id`, `filename`, `block`, `created`, `modified`) VALUES
+(3, 1, 'updctl_20180711200527933.jpg', 0, '2018-07-11 20:05:27', '2018-07-11 20:05:27'),
+(4, 1, 'updctl_20180711200527130.JPG', 0, '2018-07-11 20:05:27', '2018-07-11 20:05:27'),
+(5, 1, 'updctl_20180711200527328.JPG', 0, '2018-07-11 20:05:27', '2018-07-11 20:05:27'),
+(6, 3, 'updctl_20180711201342306.jpg', 0, '2018-07-11 20:13:42', '2018-07-11 20:13:42'),
+(7, 3, 'updctl_20180711201342386.JPG', 0, '2018-07-11 20:13:42', '2018-07-11 20:13:42'),
+(8, 3, 'updctl_20180711201342216.JPG', 0, '2018-07-11 20:13:42', '2018-07-11 20:13:42');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `osc_unc_cottages`
+--
+
+DROP TABLE IF EXISTS `osc_unc_cottages`;
+CREATE TABLE IF NOT EXISTS `osc_unc_cottages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `layout_name` varchar(255) DEFAULT NULL,
+  `caption` varchar(255) DEFAULT NULL,
+  `cottage_desc` text,
+  `properties` text,
+  `features` text,
+  `price` varchar(255) DEFAULT NULL,
+  `area` varchar(255) DEFAULT NULL,
+  `pos` int(11) NOT NULL DEFAULT '0',
+  `block` int(11) NOT NULL DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `osc_unc_th`
+--
+
+DROP TABLE IF EXISTS `osc_unc_th`;
+CREATE TABLE IF NOT EXISTS `osc_unc_th` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `layout_name` varchar(255) DEFAULT NULL,
+  `caption` varchar(255) DEFAULT NULL,
+  `th_desc` text,
+  `properties` text,
+  `features` text,
+  `price` varchar(255) DEFAULT NULL,
+  `area` varchar(255) DEFAULT NULL,
+  `pos` int(11) NOT NULL DEFAULT '0',
+  `block` int(11) NOT NULL DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `osc_unc_th`
+--
+
+INSERT INTO `osc_unc_th` (`id`, `layout_name`, `caption`, `th_desc`, `properties`, `features`, `price`, `area`, `pos`, `block`, `created`, `modified`) VALUES
+(3, NULL, 'dasd', '', 'ddsa*dasd;dasd*dasd;dasd;', 'dsad;asd;asd;', 'asd', '33', 0, 0, '2018-07-11 20:34:06', '2018-07-11 20:35:01');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `osc_unc_th_layouts`
+--
+
+DROP TABLE IF EXISTS `osc_unc_th_layouts`;
+CREATE TABLE IF NOT EXISTS `osc_unc_th_layouts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `th_id` int(11) NOT NULL DEFAULT '0',
+  `filename` varchar(255) DEFAULT NULL,
+  `block` int(11) NOT NULL DEFAULT '0',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп даних таблиці `osc_unc_th_layouts`
+--
+
+INSERT INTO `osc_unc_th_layouts` (`id`, `th_id`, `filename`, `block`, `created`, `modified`) VALUES
+(1, 1, 'thl_20180109104722451.jpg', 0, '2018-07-11 00:00:00', '2018-07-11 00:00:00'),
+(2, 1, 'thl_20180109112852622.jpg', 0, '2018-07-11 00:00:00', '2018-07-11 00:00:00'),
+(3, 3, 'updthl_20180711203501257.jpg', 0, '2018-07-11 20:35:02', '2018-07-11 20:35:02'),
+(4, 3, 'updthl_20180711203501385.JPG', 0, '2018-07-11 20:35:02', '2018-07-11 20:35:02'),
+(5, 3, 'updthl_20180711203502609.JPG', 0, '2018-07-11 20:35:02', '2018-07-11 20:35:02');
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблиці `osc_users`
 --
 
@@ -4584,7 +4699,7 @@ CREATE TABLE IF NOT EXISTS `osc_users_types` (
 --
 
 INSERT INTO `osc_users_types` (`id`, `name`, `alias`, `block`, `admin_enter`, `change_login`, `dateCreate`, `dateModify`, `adminMod`) VALUES
-(1, 'SuperAdministrator', 'superadministrator', 0, 1, 1, '2013-11-14 00:00:00', '2018-06-23 20:25:25', 0),
+(1, 'SuperAdministrator', 'superadministrator', 0, 1, 1, '2013-11-14 00:00:00', '2018-07-11 20:21:13', 0),
 (2, 'ContentManager', 'contentmanager', 0, 1, 1, '2013-11-14 00:00:00', '2016-02-04 15:35:23', 0),
 (6, 'QualityManager', 'qualitymanager', 0, 1, 1, '2013-11-15 10:47:01', '2015-09-19 01:40:14', 0),
 (9, 'Зарегистрированный', 'siteuser', 0, 0, 0, '2013-12-23 15:52:55', '2017-04-11 18:37:04', 0);
@@ -4602,7 +4717,7 @@ CREATE TABLE IF NOT EXISTS `osc_user_type_access` (
   `type_id` int(11) NOT NULL DEFAULT '0',
   `menu_id` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=530 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=532 DEFAULT CHARSET=utf8;
 
 --
 -- Дамп даних таблиці `osc_user_type_access`
@@ -5137,7 +5252,9 @@ INSERT INTO `osc_user_type_access` (`id`, `access`, `type_id`, `menu_id`) VALUES
 (526, 1, 1, 80),
 (527, 1, 1, 82),
 (528, 0, 1, 92),
-(529, 1, 1, 108);
+(529, 1, 1, 108),
+(530, 1, 1, 109),
+(531, 1, 1, 110);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
