@@ -85,7 +85,9 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/about/', ['controller' => 'Pages', 'action' => 'about']);
     $routes->connect('/news/', ['controller' => 'Pages', 'action' => 'news']);
     $routes->connect('/news/:item/', ['controller' => 'Pages', 'action' => 'newsItem'], ['pass' => ['item']]);
+
     $routes->connect('/townhouses/', ['controller' => 'Pages', 'action' => 'newth']);
+    $routes->connect('/townhouses/:id/', ['controller' => 'Pages', 'action' => 'newthItem'], ['pass' => ['id']]);
 
     //$routes->connect('/old-home/', ['controller' => 'Pages', 'action' => 'home']);    
     //$routes->connect('/old-townhouses/', ['controller' => 'Pages', 'action' => 'townhouses']);

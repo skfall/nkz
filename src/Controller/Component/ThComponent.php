@@ -204,4 +204,28 @@ class ThComponent extends HelpComponent {
         $response['status'] = "success";        
         return $response;        
     }
+
+
+    public function getUpdThLayouts(){
+        $townhouses = TableRegistry::get('osc_unc_th')->find()->where(['block' => 0])->order(['pos'])->all();
+        if ($townhouses && count($townhouses) > 0) {
+            foreach ($townhouses as $k => $ct) {
+                $ct['layouts'] = [];
+                $layouts = TableRegistry::get('osc_unc_th_layouts')->find()->where(['block' => 0, 'th_id' => $ct->id])->all();
+                if ($layouts && count($layouts) > 0) $ct['layouts'] = $layouts;
+            }
+        }
+        return $townhouses;
+    }
+
+    public function getUpdTh($id){
+        $id = (int)$id;
+        $th = TableRegistry::get('osc_unc_th')->find()->where(['block' => 0, 'id' => $id])->first();
+        if ($th && count($th) > 0){
+            $th['layouts'] = [];
+            $layouts = TableRegistry::get('osc_unc_th_layouts')->find()->where(['block' => 0, 'th_id' => $th->id])->all();
+            if ($layouts && count($layouts) > 0) $th['layouts'] = $layouts;
+        }
+        return $th;
+    }
 }

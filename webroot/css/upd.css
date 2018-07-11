@@ -181,3 +181,5 @@ header .appointment_btn.upd:hover {opacity: 0.8;}
 }
 
 .cottages .home_tabs_body {padding-bottom: 0;}
+
+.cottages .new_home_environment, .new_th .new_home_environment {padding: 50px 0;}

@@ -368,5 +368,79 @@
 	</div>
 </section>
 
+
+<?php 
+	
+    if ($ready_ct && count($ready_ct) > 0) { ?>
+        <section class="rd_th_layouts">
+
+            <?php 
+                $first_ct = $ready_ct[0];
+                $first_layouts = $first_ct['layouts'];
+
+            ?>
+
+            <div class="container">
+
+                <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 left_side">
+                    
+                    <div class="caption">Готовые <br>коттеджи</div>
+                    <div class="separator"></div>
+
+                    <div class="layouts_switcher">
+                        <p>Метраж м<sup>2</sup></p>
+                        <ul>
+                            <?php 
+                                foreach ($ready_ct as $rk => $rv) { 
+                                        $active = $rk == 0 ? "active" : "";
+                                    ?>
+                                    <li onclick="appct.load_rd_ct(<?= $rv->id ?>, this);" class="<?= $active; ?>"><a href="javascript:void(0);"><?= $rv['area']; ?></a></li>
+                                <?php }
+                            ?>
+                        </ul>
+                    </div>
+
+                    <div class="th_name"><?= $first_ct['name']; ?></div>
+                    <div class="description">
+                        <?= $first_ct['content']; ?>
+                    </div>
+
+                </div>
+
+                
+                <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 rd_th_layouts_holder">
+                    <div class="top_owl owl-carousel">
+                        <?php 
+                            if ($first_layouts && count($first_layouts) > 0) {
+                                foreach ($first_layouts as $fk => $fv) { ?>
+                                    <div class="item">
+                                        <a href="<?= COTTAGES_PATH.$fv->source; ?>" class="fancybox" data-fancybox="th_layout_gal_111">
+                                            <img src="<?= COTTAGES_PATH.'crop/435x340_'.$fv->source; ?>" alt="Layout">
+                                        </a>
+                                    </div>
+                                <?php }
+                            }
+                        ?>
+                    </div>
+                    <div class="bot_owl owl-carousel">
+                        <?php 
+                            if ($first_layouts && count($first_layouts) > 0) {
+                                foreach ($first_layouts as $fk => $fv) { ?>
+                                    <div class="item">
+                                        <img src="<?= COTTAGES_PATH.'crop/435x340_'.$fv->source; ?>" alt="Layout">
+                                    </div>
+                                <?php }
+                            }
+                        ?>
+                    </div>
+                </div>
+
+                
+            </div>
+        </section>
+    <?php }
+?>
+
+
 <?= $this->element('manager'); ?>
 <div class="space20"></div>

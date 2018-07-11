@@ -54,6 +54,9 @@ class AjaxController extends AppController
                     case 'load_lines_layouts':
                         $response = $this->Th->getThLinesLayouts();
                         break;
+                    case 'load_rd_ct_new':
+                        $response = $this->Cottages->getReadyCt();
+                        break;
                     default: break;
                 }
             }

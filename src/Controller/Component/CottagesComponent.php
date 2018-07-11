@@ -248,6 +248,68 @@ class CottagesComponent extends HelpComponent {
         return $this->q($q, 1);
     }
 
+    // COPIED FROM TOWNHOUSES (NAMES - TH, TABLES - CT)
+    public function getCtReadyCt(){
+        $townhouses = TableRegistry::get('osc_nct_ready_ct')->find()->where(['block' => 0])->order(['area'])->all()->toArray();
+        if ($townhouses) {
+            foreach ($townhouses as $key => &$value) {
+                $th_id = (int)$value['id']; 
+                $items = TableRegistry::get('osc_nct_ready_ct_layouts')->find()->where(['block' => 0, 'ref' => $th_id])->all();
+                $value['layouts'] = $items;
+            }
+        }
+        return $townhouses;
+    }
+
+    public function getReadyCt(){
+        $response = array('status' => '', 'message' => '');
+        $th_id = (int)$this->post('id');
+        $th = TableRegistry::get('osc_nct_ready_ct')->find()->where(['block' => 0, 'id' => $th_id])->first();
+        
+        if ($th) {
+            $response['th_name'] = $th->name;
+            $response['th_desc'] = $th->content;
+
+            $layouts = TableRegistry::get('osc_nct_ready_ct_layouts')->find()->where(['block' => 0, 'ref' => $th->id])->all();
+            
+            $layouts_html = "";
+            if ($layouts && count($layouts) > 0) {
+                ob_start(); ?>
+
+                <div class="top_owl owl-carousel">
+                    <?php 
+                        if ($layouts && count($layouts) > 0) {
+                            foreach ($layouts as $fk => $fv) { ?>
+                                <div class="item">
+                                    <a href="<?= COTTAGES_PATH.$fv->source; ?>" class="fancybox" data-fancybox="th_layout_gal_111">
+                                        <img src="<?= COTTAGES_PATH.'crop/435x340_'.$fv->source; ?>" alt="Layout">
+                                    </a>
+                                </div>
+                            <?php }
+                        }
+                    ?>
+                </div>
+                <div class="bot_owl owl-carousel">
+                    <?php 
+                        if ($layouts && count($layouts) > 0) {
+                            foreach ($layouts as $fk => $fv) { ?>
+                                <div class="item">
+                                    <img src="<?= COTTAGES_PATH.'crop/435x340_'.$fv->source; ?>" alt="Layout">
+                                </div>
+                            <?php }
+                        }
+                    ?>
+                </div>
+
+                <?php $layouts_html = ob_get_clean();
+            }
+
+            $response['layouts'] = $layouts_html;
+            $response['status'] = "success";
+        }
+        return $response;
+    }
+
     public function getUpdLayouts(){
         $cottages = TableRegistry::get('osc_unc_cottages')->find()->where(['block' => 0])->order(['pos'])->all();
         if ($cottages && count($cottages) > 0) {

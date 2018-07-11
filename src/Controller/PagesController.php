@@ -214,7 +214,6 @@ class PagesController extends AppController {
     }
 
     public function newth(){
-        
         $page = "new_th";
         $page_block = $this->Model->checkPageBlock("townhouses");
         if ($page_block) $this->Help->r2(RS.'404/');
@@ -224,13 +223,10 @@ class PagesController extends AppController {
         
         $banners = $this->Th->getThBanners();
         $intro = $this->Th->getThIntro();
-        $video = $this->Th->getThVideo();
-        $gal = $this->Th->getThGal();
-        $blocks = $this->Th->getThBlocks();
-        $info1 = $this->Th->getThInfoblock1();
-        $info2 = $this->Th->getThInfoblock2();
         $ready_th = $this->Th->getThReadyTh();
+        $blocks = $this->Th->getThBlocks();
 
+        
 
         $meta = $this->Model->getMetaData("townhouses");
         if (isset($meta['meta_title']) && $meta['meta_title']) {
@@ -246,7 +242,41 @@ class PagesController extends AppController {
             $this->set('meta_keys', $meta_keys);
         }
 
-        $view_model = compact('page', 'manager', 'manager_menu', 'banners', 'intro', 'video', 'gal', 'blocks', 'info1', 'info2', 'ready_th');
+        $view_model = compact('page', 'manager', 'manager_menu', 'banners', 'intro', 'ready_th', 'blocks');
+        $this->set($view_model);
+    }
+
+    public function newthItem(){
+        $page = "new_th";
+        $page_block = $this->Model->checkPageBlock("townhouses");
+        if ($page_block) $this->Help->r2(RS.'404/');
+        
+        $manager = $this->Model->getManager();
+        $manager_menu = $this->Model->getManagerMenu();
+        $video = $this->Th->getThVideo();
+        $gal = $this->Th->getThGal();
+        $info1 = $this->Th->getThInfoblock1();
+        $info2 = $this->Th->getThInfoblock2();
+        
+
+        $env = $this->Model->getHomeEnv();
+        $traffic = $this->Model->getNhTraffic();
+
+        $meta = $this->Model->getMetaData("townhouses");
+        if (isset($meta['meta_title']) && $meta['meta_title']) {
+            $meta_title = $meta['meta_title'];
+            $this->set('meta_title', $meta_title);
+        }
+        if (isset($meta['meta_desc']) && $meta['meta_desc']) {
+            $meta_desc = $meta['meta_desc'];
+            $this->set('meta_desc', $meta_desc);
+        }
+        if (isset($meta['meta_keys']) && $meta['meta_keys']) {
+            $meta_keys = $meta['meta_keys'];
+            $this->set('meta_keys', $meta_keys);
+        }
+
+        $view_model = compact('page', 'manager', 'manager_menu', 'video', 'gal', 'blocks', 'info1', 'info2', 'traffic', 'env');
         $this->set($view_model);
     }
 
@@ -467,6 +497,7 @@ class PagesController extends AppController {
         }
 
         $upd_cottages_list = $this->Cottages->getUpdLayouts();
+        $ready_ct = $this->Cottages->getCtReadyCt();
 
         $meta_data = $this->Cottages->getUniMeta('cottages');
 
@@ -494,7 +525,8 @@ class PagesController extends AppController {
             'PA' => $PA,
             'cottages_list' => $upd_cottages_list,
             'manager' => $manager,
-            'manager_menu' => $manager_menu
+            'manager_menu' => $manager_menu,
+            'ready_ct' => $ready_ct
         ]);
     }
 

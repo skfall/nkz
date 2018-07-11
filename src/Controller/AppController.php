@@ -18,7 +18,6 @@ class AppController extends Controller {
         $this->loadComponent('Flash');
 
         if ($this->request->action == "cottages" || $this->request->action == "cottageItem") {
-            $this->loadComponent('Cottages');
             $this->viewBuilder()->layout('cottages');
         }else{
             $this->viewBuilder()->layout('nkz');
@@ -29,6 +28,7 @@ class AppController extends Controller {
         // GET COMPONENTS
         $this->loadComponent('Help');
         $this->loadComponent('Model');
+        $this->loadComponent('Cottages');
         $this->loadComponent('Th');
         $menu = $this->Model->getMenu();
 
