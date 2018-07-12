@@ -5,6 +5,8 @@
 
 
 <?php 
+
+$flat_desc_active = "";
 /*
 	<section>
 		<div class="layouts_page_caption">

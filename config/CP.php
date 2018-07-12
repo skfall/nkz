@@ -3,7 +3,7 @@
 class CP
 {
 	public $multilang = true;
-	public $projectFolderName = "nkz_bcp"; // Либо имя папки либо пустая строка
+	public $projectFolderName = "nkz"; // Либо имя папки либо пустая строка
 	public $projectFolder = "/"; // не трогать
 	public $domainName;
 	public $ri;
