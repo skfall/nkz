@@ -28,7 +28,7 @@ $config = [
 	'host'		=>'localhost',
 	'user'		=>'root',
 	'pass'		=>'',
-	'db'		=>'avm_nkznew',
+	'db'		=>'avm_nkz',
 	'charset'	=>'utf8',
 	'prefix'	=>'osc_'
 ];

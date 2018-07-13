@@ -171,11 +171,11 @@
 */
 ?>
 
-
+<?php if (isset($cottages_list) && $cottages_list && count($cottages_list) > 0): ?>
 <section class="layouts_area ct_layouts_list" id="cottages_layouts">
 	<div class="container">
 		<?php // LAYOUTS START ?>
-		<?php if (isset($cottages_list) && $cottages_list && count($cottages_list) > 0): ?>
+		
 			<?php foreach ($cottages_list as $key => $cottage): ?>
 				
 
@@ -363,10 +363,11 @@
 				<!-- LAYOUT ITEM END -->
 			<?php endforeach ?>
 
-		<?php endif ?>
+		
 
 	</div>
 </section>
+<?php endif ?>
 
 
 <?php 
