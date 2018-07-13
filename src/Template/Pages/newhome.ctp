@@ -94,18 +94,20 @@
 		</div>
 
 		<div class="col-lg-4 col-md-4 col-md-4 col-xs-4 item">
-			<a href="<?= RS.'cottages/'; ?>">
-				<img src="<?= RS.'img/ob2.jpg'; ?>" alt="Cottages" />
-				<span class="object_name" >Коттеджи</span>
+			<a href="<?= RS.'townhouses/'; ?>">
+				<img src="<?= RS.'img/ob2.JPG'; ?>" alt="Townhouses" />
+				<span class="object_name" >Экохаусы</span>
 			</a>
 		</div>
 
 		<div class="col-lg-4 col-md-4 col-md-4 col-xs-4 item">
-			<a href="<?= RS.'townhouses/'; ?>">
-				<img src="<?= RS.'img/ob3.jpg'; ?>" alt="Townhouses" />
-				<span class="object_name" >Таунхаусы</span>
+			<a href="<?= RS.'cottages/'; ?>">
+				<img src="<?= RS.'img/ob3.JPG'; ?>" alt="Cottages" />
+				<span class="object_name" >Коттеджи</span>
 			</a>
 		</div>
+
+		
 	</div>
 </div>
 

@@ -1,9 +1,27 @@
 <?php
+
 use Cake\Core\Plugin;
 use Cake\Routing\RouteBuilder;
 use Cake\Routing\Router;
 use Cake\Routing\Route\DashedRoute;
 
+/*
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body style="background: #333; position: relative; height: 100vh;">
+    <img src='http://sk-fall.com.ua/nkz/img/logo_ru.svg' alt='' style="width: 300px; height: auto; position: absolute; left: 50%; top: 40%; margin-left: -150px;">
+</body>
+</html>
+
+
+*/
 
 
 $clearRU = $_SERVER['REQUEST_URI']; //preg_replace(RS, "", $_SERVER['REQUEST_URI'], 1); // str_replace(RS,"",$_SERVER['REQUEST_URI'],1);

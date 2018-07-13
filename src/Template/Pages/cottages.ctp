@@ -37,9 +37,11 @@
 					<div class="upd_sub_caption_2"><?= $formatted_sub_2 ?: "" ?></div>
 
 					<div class="slide_btns">
-						<a class="btn_2" href="javascript:void(0);" onclick="upd.scroll_to('#cottages_layouts');" style="margin-right:20px;">
-							Посмотреть планировки
-						</a>
+						<?php if (isset($cottages_list) && $cottages_list && count($cottages_list) > 0): ?>
+							<a class="btn_2" href="javascript:void(0);" onclick="upd.scroll_to('#cottages_layouts');" style="margin-right:20px;">
+								Посмотреть планировки
+							</a>
+						<?php endif ?>
 						<a class="btn_1" href="#" data-toggle="modal" data-target="#visit_modal" onclick="ga('send', 'event', 'Кнопка', 'Записаться на просмотр');" style="margin-right:0;">
 							Записаться на просмотр
 						</a>

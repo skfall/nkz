@@ -95,7 +95,7 @@
 											$source = $slide->source ? HOUSE_SLIDES_PATH.$slide->source : IMG_PATH.'def_logo.jpg'; 
 										?>
 										<div class="item">
-											<a href="<?= RS.'img/th_tab_bg.jpg'; ?>" class="fancybox">
+											<a href="<?= $source; ?>" class="fancybox" data-fancybox="house_<?= $house->id ?>">
 												<img src="<?= $source; ?>" alt="Image" />
 											</a>
 										</div>
