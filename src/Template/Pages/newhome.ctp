@@ -137,7 +137,7 @@ if ($intro) { ?>
 			<div class="clear"></div>
 			<div class="new_opportunities">
 				<div class="caption">Ваши новые возможности</div>
-				<a href="#" data-toggle="modal" data-target="#visit_modal" onclick="ga('send', 'event', 'Кнопка', 'Записаться на просмотр');">Узнай больше</a>
+				<a href="https://n-k-z.com/news/100/">Узнай больше</a>
 			</div>
 			<div class="clear"></div>
 
