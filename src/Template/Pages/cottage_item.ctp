@@ -27,9 +27,6 @@
 	</div>
 </div>
 
-
-
-
 <section class="layouts_area ct_layouts_list upd_ct_inner_item" id="cottages_layouts">
 	<div class="container">
 		<!-- LAYOUT ITEM -->

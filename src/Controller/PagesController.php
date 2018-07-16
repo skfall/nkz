@@ -227,6 +227,14 @@ class PagesController extends AppController {
         $blocks = $this->Th->getThBlocks();
 
         $townhouses_layouts = $this->Th->getUpdThLayouts();
+
+        $video = $this->Th->getThVideo();
+        $gal = $this->Th->getThGal();
+        $info1 = $this->Th->getThInfoblock1();
+        $info2 = $this->Th->getThInfoblock2();
+
+        $env = $this->Model->getHomeEnv();
+        $traffic = $this->Model->getNhTraffic();
         
 
         $meta = $this->Model->getMetaData("townhouses");
@@ -243,7 +251,7 @@ class PagesController extends AppController {
             $this->set('meta_keys', $meta_keys);
         }
 
-        $view_model = compact('page', 'manager', 'manager_menu', 'banners', 'intro', 'ready_th', 'blocks', 'townhouses_layouts');
+        $view_model = compact('page', 'manager', 'manager_menu', 'banners', 'intro', 'ready_th', 'blocks', 'townhouses_layouts', 'info1', 'info2', 'traffic', 'env', 'video', 'gal');
         $this->set($view_model);
     }
 
@@ -502,6 +510,15 @@ class PagesController extends AppController {
             $gallery = array();
         }
 
+        $genplan = array();
+        $genplan_array = $this->Cottages->getGenplan();
+        foreach ($genplan_array as $key => $value) {
+            $genplan[$value['id']] = $value; 
+        }
+
+        $env = $this->Model->getHomeEnv();
+        $traffic = $this->Model->getNhTraffic();
+
         $upd_cottages_list = $this->Cottages->getUpdLayouts();
         $ready_ct = $this->Cottages->getCtReadyCt();
 
@@ -532,7 +549,10 @@ class PagesController extends AppController {
             'cottages_list' => $upd_cottages_list,
             'manager' => $manager,
             'manager_menu' => $manager_menu,
-            'ready_ct' => $ready_ct
+            'ready_ct' => $ready_ct,
+            'env' => $env,
+            'traffic' => $traffic,
+            'genplan' => $genplan
         ]);
     }
 

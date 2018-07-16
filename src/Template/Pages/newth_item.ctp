@@ -221,11 +221,6 @@
 
 
 
-
-
-
-
-
 <?php 
     if ($info1) { ?>
         <section class="th_info_block_1">
@@ -503,8 +498,6 @@ if ($traffic) { ?>
     <?php }
 ?>
 
-
-
 <?php 
     if ($gal && count($gal) > 0) { ?>
         <section class="th_gal_owl" >
@@ -535,8 +528,6 @@ if ($traffic) { ?>
         </section>
     <?php }
 ?>
-
-
 
 <?php 
     if ($info2) { ?>

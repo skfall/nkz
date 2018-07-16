@@ -105,12 +105,12 @@ Router::scope('/', function (RouteBuilder $routes) {
     $routes->connect('/news/:item/', ['controller' => 'Pages', 'action' => 'newsItem'], ['pass' => ['item']]);
 
     $routes->connect('/townhouses/', ['controller' => 'Pages', 'action' => 'newth']);
-    $routes->connect('/townhouses/:id/', ['controller' => 'Pages', 'action' => 'newthItem'], ['pass' => ['id']]);
+    //$routes->connect('/townhouses/:id/', ['controller' => 'Pages', 'action' => 'newthItem'], ['pass' => ['id']]);
 
     //$routes->connect('/old-home/', ['controller' => 'Pages', 'action' => 'home']);    
     //$routes->connect('/old-townhouses/', ['controller' => 'Pages', 'action' => 'townhouses']);
     $routes->connect('/cottages/', ['controller' => 'Pages', 'action' => 'cottages']);
-    $routes->connect('/cottages/:id/', ['controller' => 'Pages', 'action' => 'cottageItem'], ['pass' => ['id']]);
+    //$routes->connect('/cottages/:id/', ['controller' => 'Pages', 'action' => 'cottageItem'], ['pass' => ['id']]);
     $routes->connect('/flats/:house/:layouts/', ['controller' => 'Pages', 'action' => 'layouts'], ['pass' => ['house', 'layouts']]);
     $routes->connect('/building-progress/', ['controller' => 'Pages', 'action' => 'bp']);
 
