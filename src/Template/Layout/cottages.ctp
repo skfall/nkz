@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <?php 
+    /*
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NPVJTMK');</script>
+    <!-- End Google Tag Manager -->
+    */
+    ?>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W8Z6X5G');</script>
     <!-- End Google Tag Manager -->
     
     <?= $this->Html->charset() ?>
@@ -48,7 +60,9 @@
    <link rel="stylesheet" type="text/css" href="<?= RS.'css/new_th.css'; ?>">
    <link rel="stylesheet" type="text/css" href="<?= RS.'css/upd.css'; ?>">
 
-   <!-- Global site tag (gtag.js) - Google Analytics -->
+    <?php 
+    /*
+    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68794044-1"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -57,6 +71,9 @@
 
     gtag('config', 'UA-68794044-1');
     </script>
+    */
+    ?>
+   
 
 
   
@@ -64,10 +81,20 @@
 </head>
 <body class="<?= $page; ?>">
 
+    <?php 
+    /*
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NPVJTMK"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    */
+    ?>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8Z6X5G"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     
     <script type="text/javascript">
         var RS = '<?= RS ?>';
